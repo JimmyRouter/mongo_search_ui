@@ -1,0 +1,44 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ELECTION</title>
+    <link type="text/css" href="{% static 'css/styles.css' %}" rel="stylesheet"/>
+</head>
+<body>
+    <div class="menu-container">
+        <div class="main-menu">
+            <ul>
+                {% for gr_name, items in menu_data.items %}
+                <li>
+                    <button class="main-group-btn" onclick="toggleSubmenu('{{ gr_name }}')">{{ gr_name }}</button>
+                    <ul class="sub-menu" id="{{ gr_name }}Menu">
+                        {% for item in items %}
+                        <li>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+    </div>
+    <div class="search-box">
+        <form class="form-search" method="GET" action="{% url 'group' group_name item_name %}">
+        {% csrf_token %}
+        {{ sform }}
+
+        <input type="submit" value="Search">
+        </form>
+    </div>
+    <div class="group-container">
+        {% block grouping %}
+
+        {% endblock %}
+    </div>
+
+    <script src="{% static 'js/menu.js' %}"></script>
+</body>
+</html>

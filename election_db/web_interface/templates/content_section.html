@@ -1,0 +1,49 @@
+<!-- content_section.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="search-box">
+    <h1>SEARCH</h1>
+    <form class="form-search" method="POST" action="{% url 'content' group_name item_name %}">
+        {% csrf_token %}
+        {{ sform }}
+
+        <input type="submit" value="Search">
+    </form>
+</div>
+
+<h1>PREVIEW</h1>
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Father Name</th>
+                <th>Father Surname</th>
+                <th>Gender</th>
+                <th>DOB</th>
+                <th>Age</th>
+                <th>Address</th>
+                <th>Party</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for data_row in preview_data %}
+                <tr>
+                    <td>{{ data_row.name }}</td>
+                    <td>{{ data_row.surname }}</td>
+                    <td>{{ data_row.father_name }}</td>
+                    <td>{{ data_row.father_surname }}</td>
+                    <td>{{ data_row.gender }}</td>
+                    <td>{{ data_row.dob }}</td>
+                    <td>{{ data_row.age }}</td>
+                    <td>{{ data_row.address }}</td>
+                    <td>{{ data_row.party }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

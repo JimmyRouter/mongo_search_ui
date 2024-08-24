@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pie Charts</title>
+    <!-- Include Plotly.js library -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <h1>Age Group Pie Chart</h1>
+    <div id="age_group_pie"></div>
+    
+    <h1>Grouping Pie Chart</h1>
+    <div id="party_pie"></div>
+    
+    <h1>Gender Pie Chart</h1>
+    <div id="gender_pie"></div>
+    
+
+    <!-- Render the charts -->
+    <script>
+        var age_group_data = {{ age_group_data|safe }};
+        Plotly.newPlot('age_group_pie', age_group_data.data, age_group_data.layout);
+        
+        var party_data = {{ party_data|safe }};
+        Plotly.newPlot('party_pie', party_data.data, party_data.layout);
+        
+        var gender_data = {{ gender_data|safe }};
+        Plotly.newPlot('gender_pie', gender_data.data, gender_data.layout);
+    </script>
+</body>
+</html>

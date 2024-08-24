@@ -1,0 +1,47 @@
+<!-- content_section.html -->
+{% extends 'base_grouping.html' %}
+
+{% block grouping %}
+<a href="{% url 'content' group_name item_name %}"><span>NORMAL</span></a>
+<div class="pieGraphContainer" style="width: 200px; height: 200px;">
+    <svg height="200" width="200" viewBox="-100 -100 200 200">
+        <circle r="100" cx="0" cy="0" fill="white" />
+        {% for piece in pie_data %}
+        <circle r="50" cx="0" cy="0" fill="transparent"
+              stroke = "{{ piece.color }}"
+              stroke-width = "100"
+              stroke-dasharray = "{{ piece.stroke.0 }} {{ piece.stroke.1 }}"
+              transform="rotate({{ piece.rotate }})"/>
+        {% endfor %}
+    </svg>
+</div>
+<div class="fam_group-container">
+    <div class="fam-group">
+
+        {% for fam in group_data %}
+            {% for fam_head, membs in fam.items %}
+
+                <div class="fam-box" id="fam_box{{fam_head}}" onclick="expandDiv('{{ fam_head }}')" >Family Head:  {{ fam_head }} count: {{ membs|length }}
+
+                    {% for member in membs %}
+                        <div class="fam-memb" save>
+                            <form  class="form-member" method="POST" action="{% url 'group' group_name item_name %}">
+                                <fieldset id= "{{member.name.value}}{{member.surname.value}}{{member.father_name.value}}{{member.age.value}}" disabled>
+                                {% csrf_token %}
+                                {{ member }}
+                                    <input type="submit" value="submit">
+                                </fieldset>
+                            </form>
+                            <button class="btn-edit" onclick="toggleEditable('{{member.name.value}}{{member.surname.value}}{{member.father_name.value}}{{member.age.value}}')">edit</button>
+                        </div>
+                    {% endfor %}
+
+                </div>
+
+            {% endfor %}
+        {% endfor %}
+
+    </div>
+</div>
+
+{% endblock %}

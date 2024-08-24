@@ -1,0 +1,226 @@
+
+body {
+    font-family: "Helvetica Neue", sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+    display: block;
+}
+header {
+    background-color: #f9f9f9;
+    padding: 10px;
+    text-align: center;
+}
+.menu-container {
+    width: 20%;
+    min-width: 250px;
+    background-color: #f0f0f0;
+    padding: 10px;
+    float: left;
+    height: calc(100vh - 50px);
+    box-sizing: border-box; /
+}
+.main-menu {
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.main-group-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #FF9933;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.main-group-btn:hover {
+    background-color: #FFC966;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.sub-menu {
+    list-style-type: none;
+    padding-left: 0;
+    display: none;
+    overflow: hidden;
+}
+
+.sub-menu li {
+    list-style-type: none;
+    padding-left: 0;
+    display: block;
+}
+
+.sub-menu li a {
+    display: block;
+    padding: 5px 10px;
+    color: #138808;
+    background-color: transparent;
+    border: 1px solid rgba(0, 0, 128, 0.2);
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.sub-menu li a:hover {
+    background-color: #333399;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.pieGraphContainer{
+    position:absolute;
+    top: 10px;
+    right: 10px;
+}
+.search-box {
+    width: 60%;
+    display: inline-flex;
+    padding: 10px;
+    color: #000;
+}
+.form-search{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+.content-container{
+    width:80%;
+    float:right;
+}
+
+.fam_group-container{
+    float: right;
+    width:80%;
+}
+.fam-box{
+  display:grid;
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  margin: 10px;
+  background-color: #f0f9f6;
+  color: #325d81;
+  font-weight: bold;
+  box-shadow: inset 0 0 0 2px #b3e6c9,
+              inset 0 0 0 4px #c6ecd7,
+              inset 0 0 0 7px #d9f2e4,
+              inset 0 0 0 10px #ecf9f2;
+  transition: background-color 0.3s ease;
+  box-sizing: border-box;
+  overflow: hidden;
+  cursor: pointer;
+}
+.fam-box.expanded {
+  height: auto;
+  display:block;
+}
+.fam-box.expanded:hover {
+    background-color: #d9f2e4;
+}
+
+.fam-box:hover {
+    background-color: #d9f2e4;
+}
+.fam-memb {
+    box-sizing: border-box;
+    margin: 5px;
+    height:175px;
+}
+.fam-memb:hover {
+    background-color: #c6ecd6;
+}
+fieldset {
+    display:flex;
+    flex-flow: row wrap;
+}
+.form-member{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    padding: 5px;
+    margin: 5px;
+}
+
+.gradient-border {
+  width: 50%;
+  height: 100px;
+  padding: 10px;
+  background-color: #f0f9f6;
+  color: #325d81; /
+  font-weight: bold;
+  box-shadow: inset 0 0 0 2px #b3e6c9,
+              inset 0 0 0 4px #c6ecd7,
+              inset 0 0 0 7px #d9f2e4,
+              inset 0 0 0 10px #ecf9f2;
+  transition: background-color 0.3s ease;
+  box-sizing: border-box;
+  overflow: hidden;
+  cursor: pointer;
+}
+.overlay-border {
+  box-sizing: border-box;
+  border: solid green;
+  margin: 10px;
+}
+
+.gradient-border.expanded {
+  height: auto;
+}
+
+.gradient-border:hover{
+    background-color: #d9f2e4;
+}
+
+.overlay-border:hover{
+    background-color: #c6ecd6
+}
+
+h1 {
+    color: #00008b;
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 10px;
+}
+
+
+form {
+    text-align: center;
+    display: block;
+
+}
+
+label {
+    display: block;
+    margin: 5px;
+    padding: 5px;
+    font-weight: bold;
+    color: #000080;
+}
+
+input[type="submit"] {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
